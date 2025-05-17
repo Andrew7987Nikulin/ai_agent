@@ -1,0 +1,110 @@
+2025-04-16 02:18:44,400 [INFO] Chromedriver is already installed.
+2025-04-16 02:18:44,412 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.166.110:5000
+2025-04-16 02:18:44,412 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-16 02:18:44,413 [INFO]  * Restarting with stat
+2025-04-16 02:18:45,240 [INFO] Chromedriver is already installed.
+2025-04-16 02:18:45,248 [WARNING]  * Debugger is active!
+2025-04-16 02:18:45,250 [INFO]  * Debugger PIN: 987-710-068
+2025-04-16 02:18:54,989 [INFO] Sending request to GPT-4o API with prompt: найди беспроводные наушники на амазон
+2025-04-16 02:18:56,663 [INFO] API response status: 200
+2025-04-16 02:18:56,663 [INFO] API response text: {
+  "id": "chatcmpl-BMjqHkKVw8CGWcJQjnEDfExXESTh5",
+  "object": "chat.completion",
+  "created": 1744759133,
+  "model": "gpt-4o-2024-08-06",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"actions\": [\n        {\n            \"action\": \"open_url\",\n            \"url\": \"https://www.amazon.com\"\n        },\n        {\n            \"action\": \"type_text\",\n            \"selector\": \"input#twotabsearchtextbox\",\n            \"text\": \"беспроводные наушники\\n\"\n        },\n        {\n            \"action\": \"return_text\",\n            \"text\": \"Fetching the first product's link and a brief description.\",\n            \"url\": \"\"\n        }\n    ]\n}",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 552,
+    "completion_tokens": 105,
+    "total_tokens": 657,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": "fp_17316073ab"
+}
+
+2025-04-16 02:18:56,947 [INFO] Chromedriver is already installed.
+2025-04-16 02:19:31,392 [ERROR] Amazon data error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00408073+60707]
+	GetHandleVerifier [0x004080B4+60772]
+	(No symbol) [0x00230683]
+	(No symbol) [0x00278660]
+	(No symbol) [0x002789FB]
+	(No symbol) [0x002C1022]
+	(No symbol) [0x0029D094]
+	(No symbol) [0x002BE824]
+	(No symbol) [0x0029CE46]
+	(No symbol) [0x0026C5D3]
+	(No symbol) [0x0026D424]
+	GetHandleVerifier [0x0064BB53+2435075]
+	GetHandleVerifier [0x006470F3+2416035]
+	GetHandleVerifier [0x0066349C+2531660]
+	GetHandleVerifier [0x0041F145+155125]
+	GetHandleVerifier [0x00425AED+182173]
+	GetHandleVerifier [0x0040F948+91640]
+	GetHandleVerifier [0x0040FAF0+92064]
+	GetHandleVerifier [0x003FA5B0+4704]
+	BaseThreadInitThunk [0x76065D49+25]
+	RtlInitializeExceptionChain [0x771ACF0B+107]
+	RtlGetAppContainerNamedObjectPath [0x771ACE91+561]
+
+2025-04-16 02:19:31,493 [ERROR] Execution error: Traceback (most recent call last):
+  File "C:\Users\User\Documents\ai_agent\app.py", line 328, in execute_actions
+    process_amazon(driver, result)
+  File "C:\Users\User\Documents\ai_agent\app.py", line 225, in process_amazon
+    WebDriverWait(driver, 30).until(
+  File "C:\Users\User\Documents\ai_agent\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00408073+60707]
+	GetHandleVerifier [0x004080B4+60772]
+	(No symbol) [0x00230683]
+	(No symbol) [0x00278660]
+	(No symbol) [0x002789FB]
+	(No symbol) [0x002C1022]
+	(No symbol) [0x0029D094]
+	(No symbol) [0x002BE824]
+	(No symbol) [0x0029CE46]
+	(No symbol) [0x0026C5D3]
+	(No symbol) [0x0026D424]
+	GetHandleVerifier [0x0064BB53+2435075]
+	GetHandleVerifier [0x006470F3+2416035]
+	GetHandleVerifier [0x0066349C+2531660]
+	GetHandleVerifier [0x0041F145+155125]
+	GetHandleVerifier [0x00425AED+182173]
+	GetHandleVerifier [0x0040F948+91640]
+	GetHandleVerifier [0x0040FAF0+92064]
+	GetHandleVerifier [0x003FA5B0+4704]
+	BaseThreadInitThunk [0x76065D49+25]
+	RtlInitializeExceptionChain [0x771ACF0B+107]
+	RtlGetAppContainerNamedObjectPath [0x771ACE91+561]
+
+
+2025-04-16 02:19:33,623 [INFO] 127.0.0.1 - - [16/Apr/2025 02:19:33] "POST /execute HTTP/1.1" 200 -
+2025-04-16 02:19:33,657 [INFO] 127.0.0.1 - - [16/Apr/2025 02:19:33] "GET /static/amazon_error_c8d1bda6-02ef-44b9-874a-6fea4d34a439.png HTTP/1.1" 200 -

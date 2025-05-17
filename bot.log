@@ -1,0 +1,89 @@
+2025-05-13 22:07:42,457 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.242.110:5000
+2025-05-13 22:07:42,457 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 22:07:42,458 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:07:43,076 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 22:07:43,079 - werkzeug - INFO -  * Debugger PIN: 987-710-068
+2025-05-13 22:07:59,988 - WildberriesBot - ERROR - Browser init error: Unsupported browser: edge
+2025-05-13 22:07:59,988 - WildberriesBot - ERROR - Browser init error: Unsupported browser: edge
+2025-05-13 22:07:59,988 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:07:59] "[35m[1mPOST /execute HTTP/1.1[0m" 500 -
+2025-05-13 22:08:12,768 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:08:12] "GET / HTTP/1.1" 200 -
+2025-05-13 22:08:12,834 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:08:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 22:08:16,470 - WildberriesBot - ERROR - Browser init error: Unsupported browser: edge
+2025-05-13 22:08:16,471 - WildberriesBot - ERROR - Browser init error: Unsupported browser: edge
+2025-05-13 22:08:16,471 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:08:16] "[35m[1mPOST /execute HTTP/1.1[0m" 500 -
+2025-05-13 22:08:18,467 - WDM - INFO - ====== WebDriver manager ======
+2025-05-13 22:08:18,796 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-13 22:08:19,027 - WDM - INFO - About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_win32.zip
+2025-05-13 22:08:19,184 - WDM - INFO - Driver downloading response is 200
+2025-05-13 22:08:20,305 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-13 22:08:20,708 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-13 22:08:21,053 - WDM - INFO - Driver has been saved in cache [C:\Users\User\.wdm\drivers\chromedriver\win64\114.0.5735.90]
+2025-05-13 22:08:24,842 - WildberriesBot - ERROR - Browser init error: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 136.0.7103.93 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00D2A813+48355]
+	(No symbol) [0x00CBC4B1]
+	(No symbol) [0x00BC5358]
+	(No symbol) [0x00BE61AC]
+	(No symbol) [0x00BE1EF3]
+	(No symbol) [0x00BE0579]
+	(No symbol) [0x00C10C55]
+	(No symbol) [0x00C1093C]
+	(No symbol) [0x00C0A536]
+	(No symbol) [0x00BE82DC]
+	(No symbol) [0x00BE93DD]
+	GetHandleVerifier [0x00F8AABD+2539405]
+	GetHandleVerifier [0x00FCA78F+2800735]
+	GetHandleVerifier [0x00FC456C+2775612]
+	GetHandleVerifier [0x00DB51E0+616112]
+	(No symbol) [0x00CC5F8C]
+	(No symbol) [0x00CC2328]
+	(No symbol) [0x00CC240B]
+	(No symbol) [0x00CB4FF7]
+	BaseThreadInitThunk [0x758A5D49+25]
+	RtlInitializeExceptionChain [0x77DBCFFB+107]
+	RtlGetAppContainerNamedObjectPath [0x77DBCF81+561]
+
+2025-05-13 22:08:24,842 - WildberriesBot - ERROR - Browser init error: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 136.0.7103.93 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00D2A813+48355]
+	(No symbol) [0x00CBC4B1]
+	(No symbol) [0x00BC5358]
+	(No symbol) [0x00BE61AC]
+	(No symbol) [0x00BE1EF3]
+	(No symbol) [0x00BE0579]
+	(No symbol) [0x00C10C55]
+	(No symbol) [0x00C1093C]
+	(No symbol) [0x00C0A536]
+	(No symbol) [0x00BE82DC]
+	(No symbol) [0x00BE93DD]
+	GetHandleVerifier [0x00F8AABD+2539405]
+	GetHandleVerifier [0x00FCA78F+2800735]
+	GetHandleVerifier [0x00FC456C+2775612]
+	GetHandleVerifier [0x00DB51E0+616112]
+	(No symbol) [0x00CC5F8C]
+	(No symbol) [0x00CC2328]
+	(No symbol) [0x00CC240B]
+	(No symbol) [0x00CB4FF7]
+	BaseThreadInitThunk [0x758A5D49+25]
+	RtlInitializeExceptionChain [0x77DBCFFB+107]
+	RtlGetAppContainerNamedObjectPath [0x77DBCF81+561]
+
+2025-05-13 22:08:24,843 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:08:24] "[35m[1mPOST /execute HTTP/1.1[0m" 500 -
+2025-05-13 22:08:36,942 - werkzeug - INFO -  * Detected change in 'C:\\Users\\User\\Documents\\ai_agent\\app.py', reloading
+2025-05-13 22:08:36,985 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:10:07,495 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:10:43,562 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:11:53,835 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:12:57,681 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:13:20,350 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:14:54,897 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:21:39,690 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:22:22,603 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 22:22:33,940 - werkzeug - INFO -  * Restarting with stat

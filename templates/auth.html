@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ 'Регистрация' if mode == 'register' else 'Вход' }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container auth-container">
+        <h1>{{ 'Регистрация' if mode == 'register' else 'Вход' }}</h1>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            {% if mode == 'login' and show_2fa %}
+                <input type="text" name="token" placeholder="Код 2FA" required>
+            {% endif %}
+            <button type="submit">
+                {{ 'Зарегистрироваться' if mode == 'register' else 'Войти' }}
+            </button>
+        </form>
+
+        <div class="auth-links">
+            {% if mode == 'register' %}
+                Уже есть аккаунт? <a href="{{ url_for('login') }}">Войти</a>
+            {% else %}
+                Нет аккаунта? <a href="{{ url_for('register') }}">Зарегистрироваться</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

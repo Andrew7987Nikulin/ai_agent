@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPT-4o Browser Automation</title>
+    <base href="/">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="user-panel">
+    {% if current_user.is_authenticated %}
+        <div class="user-info">
+            🧑💻 {{ current_user.email }} |
+            {% if not current_user.totp_secret %}
+                <a href="{{ url_for('enable_2fa') }}">Включить 2FA</a> |
+            {% endif %}
+            <a href="{{ url_for('logout') }}">Выйти</a>
+        </div>
+    {% else %}
+        <div class="auth-links">
+            <a href="{{ url_for('login') }}">Вход</a> |
+            <a href="{{ url_for('register') }}">Регистрация</a>
+        </div>
+    {% endif %}
+</div>
+
+    <div class="container">
+        <h1>Browser Automation Assistant (GPT-4o)</h1>
+
+        {% if current_user.is_authenticated %}
+            <div class="control-panel">
+                <select id="browserSelect">
+                    <option value="chrome">Chrome</option>
+                    <option value="firefox">Firefox</option>
+                    <option value="edge">Edge</option>
+                </select>
+                <input type="text" id="promptInput" placeholder="Введите команду...">
+                <button onclick="execute()">Выполнить</button>
+            </div>
+            <div id="result" class="result-area"></div>
+        {% else %}
+            <div class="auth-required">
+                <p>Для использования сервиса необходимо авторизоваться</p>
+                <div class="auth-links">
+                    <a href="{{ url_for('login') }}" class="auth-btn">Войти</a>
+                    <a href="{{ url_for('register') }}" class="auth-btn">Регистрация</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        async function execute() {
+            const prompt = document.getElementById('promptInput').value.trim();
+            const browser = document.getElementById('browserSelect').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!prompt) {
+                resultDiv.innerHTML = '<div class="error">Пожалуйста, введите команду</div>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<div class="loading">🔄 Обработка...</div>';
+
+            try {
+                const response = await fetch('/execute', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt, browser })
+                });
+
+                const data = await response.json();
+
+                let html = `<div class="status">${data.status}</div>`;
+
+                if(data.screenshots && data.screenshots.length > 0) {
+                    html += '<div class="screenshots-container">';
+                    data.screenshots.forEach(img => {
+                        html += `
+                            <div class="screenshot-item">
+                                <img src="/static/${img}" class="screenshot">
+                                <div class="caption">${img}</div>
+                            </div>`;
+                    });
+                    html += '</div>';
+                }
+
+                if(data.error) {
+                    html += `<div class="error">${data.error}</div>`;
+                }
+
+                resultDiv.innerHTML = html;
+
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        ❌ Ошибка: ${error.message}
+                        ${error.response ? await error.response.text() : ''}
+                    </div>`;
+            }
+        }
+    </script>
+</body>
+</html>
